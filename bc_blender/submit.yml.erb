@@ -7,15 +7,15 @@ script:
   <%- end -%>
   native:
     <%- if instance_size == "1core" -%>
-    - "-J studio_octave_1core"
+    - "-J studio_blender_1core"
     - "-n 1"
     <%- end -%>
     <%- if instance_size == "16core" -%>
-    - "-J studio_octave_16core"
+    - "-J studio_blender_16core"
     - "-n 16"
     <%- end -%>
     <%- if instance_size == "40core" -%>
-    - "-J studio_octave_40core"
+    - "-J studio_blender_40core"
     - "--exclusive"
     <%- end -%>
 
