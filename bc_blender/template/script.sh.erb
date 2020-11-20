@@ -20,9 +20,9 @@ cd "${HOME}"
   xfce4-panel --sm-client-disable
 ) &
 
-# Launch Octave
+# Launch Blender
 set -x
 
-module load octave
+BLENDER_IMG="blender.sif"
 
-octave --gui
+singularity run $BLENDER_IMG blender
