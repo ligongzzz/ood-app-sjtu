@@ -5,6 +5,12 @@ script:
   <%- if instance_size == "40core" -%>
   queue_name: "cpu"
   <%- end -%>
+  <%- if instance_size == "16core_3gpu" -%>
+  queue_name: "dgx2"
+  <%- end -%>
+  <%- if instance_size == "16core_1gpu" -%>
+  queue_name: "dgx2"
+  <%- end -%>
   native:
     <%- if instance_size == "1core" -%>
     - "-J studio_blender_1core"
@@ -18,4 +24,17 @@ script:
     - "-J studio_blender_40core"
     - "--exclusive"
     <%- end -%>
+    <%- if instance_size == "16core_1gpu" -%>
+    - "-J studio_blender_16core_1gpu"
+    - "-N 1"
+    - "-n 16"
+    - "--gres=gpu:1"
+    <%- end -%>
+    <%- if instance_size == "16core_3gpu" -%>
+    - "-J studio_blender_16core_3gpu"
+    - "-N 1"
+    - "-n 16"
+    - "--gres=gpu:3"
+    <%- end -%>
+
 

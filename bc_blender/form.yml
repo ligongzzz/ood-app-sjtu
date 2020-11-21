@@ -5,6 +5,8 @@ attributes:
   bc_vnc_idle: 0
   bc_vnc_resolution:
     required: true
+  node_type: null
+  bc_email_on_started: null
   bc_queue: small
   instance_size:
     widget: "select"
@@ -13,11 +15,14 @@ attributes:
       - [ "1core" ]
       - [ "16core" ]
       - [ "40core" ]
+      - [ "16core_1gpu" ]
+      - [ "16core_3gpu" ]
 
 form:
-  - desktop
   - bc_vnc_idle
-  - bc_vnc_resolution
-  - bc_num_hours
   - instance_size
   - bc_queue
+  - desktop
+  - bc_num_hours
+  - bc_vnc_resolution
+  - bc_email_on_started

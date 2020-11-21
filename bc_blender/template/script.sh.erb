@@ -23,6 +23,6 @@ cd "${HOME}"
 # Launch Blender
 set -x
 
-BLENDER_IMG="blender.sif"
+BLENDER_IMG="blender_cuda.sif"
 
-singularity run $BLENDER_IMG blender
+singularity run --nv $BLENDER_IMG blender
